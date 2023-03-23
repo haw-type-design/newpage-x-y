@@ -1,0 +1,60 @@
+@font-face {
+    font-family: CM;
+    src: url("fonts/cmunrm.ttf");
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: CM-Mono;
+    src: url("fonts/cmunit.ttf");
+    font-display: swap;
+}
+
+body { 
+    font-family: CM; 
+    color: #3f00ff;
+}
+
+.remark-slide-content {
+    background-color: #ffff66;
+    padding: 36px 48px;
+}
+
+h1, h2, h3 {
+    font-family: CM;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 64px !important;
+    line-height: 1;
+    margin: 0;
+}
+
+ul {
+    font-size: 24px !important;
+}
+
+
+p, li {
+    font-size: 36px;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}
+
+
+
+.remark-code, .remark-inline-code { 
+    font-family: CM-Mono; 
+    background-color: #3f00ff;
+    color: #ffff66;
+    font-size: 24px;
+    padding: 0 12px 0 8px;
+}
+.remark-slide-number {
+    display: none;
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Setting up Plancton4Metapost</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <textarea id="source">
+
+            class: middle
+
+            # Drawing fonts
+            # using code
+
+            ---
+
+            # Agenda
+            
+            
+            --
+            1. What?
+            
+            --
+            2. Getting to know the command line 
+            
+            --
+            3. Setting up tools
+            
+            --
+            4. Launching Plancton
+            
+            --
+            5. Playing around
+
+            ---
+
+            # What?
+
+            * Font editing via code
+
+            --
+
+            * Metafont
+
+            --
+            developed by Donald Knuth for TeX
+
+            ---
+            
+            # Getting to know the command line (Gtktcl)
+            
+            --
+            
+            * using your computer with text
+            
+            --
+            
+            * launch apps or little programs (scripts)
+            
+            --
+            
+            * be careful but not anxious 
+            
+            ---
+            
+            # Gtktcl
+            
+            --
+            
+            * open Terminal (or even better install iTerm2)
+            
+            --
+            
+            * try a few commands: 
+            
+            --
+            
+                * `pwd` prints the folder (print working directory)
+                * `ls` lists files in current folder
+                * `cd directory` move to another folder `directory` (change directory)
+    
+            
+            ---
+            
+            # Gtktcl
+            
+            --
+            
+            * open Terminal (or even better install iTerm2)
+            
+            --
+            
+            * try a few commands: 
+            
+            --
+            
+                * `touch filename.extension` creates file named filename with extension `extension` in the current folder
+                * `mkdir directory` creates folder `directory` in the current directory
+                * `command -h` or `man command` opens the manual of the command (please insert a command like `ls`)
+        
+            ???
+            
+            For man page type q to exit
+            
+            ---
+            
+            # Setting up tools
+            
+            * you can install additional tools for the command line 
+            
+            * to help you: package managers i.e. homebrew
+            
+            ---
+            
+            # Setting up tools (Homebrew)
+            
+            * to start:
+            
+            --
+                * visit [brew.sh](https://brew.sh)
+            --
+                * follow download instructions
+            --
+                * this installs homebrew, a package manager for the command line
+            
+            ---
+            
+            # Setting up tools (Additionals)
+            
+            * in your command line type the following:
+            
+            --
+                * `brew install git` 
+            --
+            a version manager
+            
+            --
+                * `brew install fontforge` 
+            --
+            type design app fontforge’s command line tools
+            
+            --
+                * `brew install inkscape` 
+            --
+            vector app inkscape’s command line tools
+            --
+            
+                * `brew install virtualenv`
+            --
+            a tool to run »virtual environments« (longer story)
+            
+            ---
+            
+            class: middle
+
+            # Can we please start
+            # drawing fonts?
+
+            ---
+            
+            class: middle
+
+            # Yes
+            
+            ---
+            
+            class: middle
+            
+            # One last thing
+            
+            ---
+            
+            # Plancton Editor
+            
+            * `git clone https://github.com/simonthi/plancton-editor.git`
+            
+            --
+            * `cd plancton-editor`
+            
+            --
+            * `virtualenv plancton-env`
+            
+            --
+            
+            * `source plancton-env/bin/activate`
+            
+            --
+            * `pip install -r requirements.txt`
+            
+            --
+            * `python plancton-server.py`
+            
+            ---
+            
+            # Plancton Editor
+            
+            --
+            * open your browser
+            
+            --
+            * type `localhost:8088`
+            
+            --
+            * you should get something like:
+            
+            ![Browser showing the plancton editor served at localhost:8088](img/plancton.png)
+            
+            
+        </textarea>
+        <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+        </script>
+        <script>
+            var slideshow = remark.create();
+        </script>
+    </body>
+</html>
