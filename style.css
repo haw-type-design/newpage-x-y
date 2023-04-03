@@ -15,6 +15,9 @@ body {
     font-family: CM; 
     color: #3f00ff;
 }
+r {color: red;}
+g {color: limegreen;}
+o {color: coral;}
 
 .remark-slide-content {
     background-color: #ffff66;
