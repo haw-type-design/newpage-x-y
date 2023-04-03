@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Metapost Cheat Sheet</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+        <textarea id="source">
+
+            class: middle
+
+            # MetaPost
+            # Cheat sheet for the Plancton Editor
+
+            ---
+
+            # Description of a letter
+
+
+            <code>beginchar(<r>65</r>,<g>7</g>);</code>
+
+            * <r>65</r>: ASCII value
+            * <g>7</g>: letter width / number of units
+
+            <code>endchar(<o>5</o>);</code>
+
+            * <o>65</o>: total number of points placed
+
+            ---
+
+            # Linking points
+
+
+            <code><r>draw</r> z1 <r>--</r> z2 <r>--</r> z3 withcolor col; </code>
+
+            * link points with <r>straight line</r>
+
+            <code><g>draw</g> z1 <g>..</g> z2 <g>..</g> z3 withcolor col; </code>
+
+            * link points with a <g>curve segment</g>
+
+            ---
+
+            # Placing points
+
+
+            <code><r>top</r> y2 := capHeight * uy;</code>
+            
+            <code><g>bot</g> y1 := 0*uy;</code>
+
+            * point placement considers line thickness for <r>cap height</r> and <g>baseline</g>
+
+            <code>z4 := .5<g>[z1,z2]</g>; </code>
+
+            * point placment takes segment <g>[z1,z2] </g> into consideration
+
+            ---
+
+            # Fill 
+
+
+            <code><r>fill</r> z1 -- z2 -- z3 -- z1 -- <r>cycle</r> withcolor red;</code>
+
+            * fill area defined by z1, z2, z3 in red
+
+
+            ---
+
+            # Pens
+
+
+            <code># pickup <r>pensquare</r> scaled .5 ux; </code>
+            
+            <code># pickup <g>pencircle</g> scaled .5 ux; </code>
+
+            * use a <r>square</r> or <g>circle</g> to draw all of your letter by putting the above before any point descriptions
+            
+            ---
+
+            # Pens
+            
+            
+            * to use a separate pen description per segment use the following (example):
+
+            `pickup pencircle scaled ux;`
+            
+            `draw z1--z2 withcolor green;`
+            
+            `pickup pencircle scaled ux;`
+            
+            `draw z2--z4 withcolor blue;`
+            
+            ---
+            
+            # Line endings
+            
+            `pickup pencircle scaled ux;`
+            
+            <code><r>linecap:=circle;</r></code>
+            
+            `draw z1--z2 withcolor green;`
+            
+            * draw a round (<r>circle</r>) line ending
+            
+            `pickup pencircle scaled ux;`
+            
+            <code><r>linecap:=square;</r></code>
+            
+            `draw z1--z2 withcolor green;`
+            
+            * draw a rectangular (<r>squared</r>) line ending
+
+            
+
+        </textarea>
+        <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+        </script>
+        <script>
+            var slideshow = remark.create();
+        </script>
+    </body>
+</html>
