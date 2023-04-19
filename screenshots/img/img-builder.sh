@@ -1,0 +1,1 @@
+for i in *; do echo "<img src="/img/$i" width="100%">" >> "images.html"; done
