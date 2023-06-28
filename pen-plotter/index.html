@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pen-plotter</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+        <textarea id="source">
+
+            class: middle
+
+            # What can you
+            # do with the
+            # pen-plotter?
+
+            ---
+
+            # Agenda
+            
+            
+            --
+            1. Setup
+            
+            --
+            2. Plotting with InkScape 
+            
+            --
+            3. Command Line Interface
+
+            ---
+            
+             class: middle
+
+            # Setup
+            
+            ---
+
+            # Setup
+
+            * The pen-plotter is capable of plotting in A3
+
+            --
+            
+            * bring your own pens when you want to plot (the only limit is the diameter, ca. 2cm)
+            
+            
+            
+            ---
+
+            # Setup
+            
+            --
+            
+            * this is how it looks:
+            
+            .right[![The pen-plotter](img/plotter_min.png)]
+
+           
+            ---
+            
+            class: middle
+
+            # Plotting with InkScape
+            
+            ---
+            
+            # Plotting with InkScape
+            
+            * [InkScape](https://inkscape.org/) is an open source vector graphics app (comparable to Adobe Illustrator or Affinity Designer)
+            
+            --
+            
+            * You need to install some [additional software](https://drive.google.com/drive/folders/1mDPv3P24jBe4Dkz6jCn9UlGHwQM1bb9V) to use the plotter with InkScape
+            
+            --
+            
+                * please follow the provided installation guide all through to the end
+
+            
+            ---
+            
+            
+            # Plotting with InkScape
+            
+            * Once everything is installed, you find `iDraw Controls` in your Extensions panel
+            
+            
+            .right[![The Extension panel in InkScape showing the iDraw Controls](img/iDraw-Controls.png)]
+            
+            
+            ---
+            
+            
+            # Plotting with InkScape
+            
+            * The first thing to verify is the basic setup 
+            
+            --
+            
+            * plug the plotter to your computer and to a power source
+            
+            --
+            
+            * here you can set up the pen up and down position 
+            
+            --
+            
+            .right[![The Extension panel in InkScape showing the iDraw Controls](img/general-options.png)]
+            
+            ---
+            
+            # Plotting with InkScape
+            
+            * A few notes:
+
+            --
+            
+                * best practice is to test the pen up and down positions in all for edges of the paper to avoid smearing
+                
+                * take a look at all the other tabs in the settings as well to experiment with writing speeds, etc. 
+            
+            
+            * A video turorial can be found [here](https://www.youtube.com/watch?v=tphcpTOt0PE)
+            
+            ---
+            
+            # Plotting with InkScape
+            
+            * Advanced notes:
+
+            --
+            
+                * you can use advanced settings during your plot such as changing speeds for different layer. More about this in [this handbook](https://wiki.evilmadscientist.com/AxiDraw_Layer_Control)
+                
+            ---
+            
+            class: middle
+
+            # Command Line Interface
+            
+            ---
+             
+            # Command Line Interface
+            
+            * Motivation:
+                
+                * Plotting multiple files in one go while having influence on plotter parameters
+            
+                * Using the plotter interactively
+            
+            
+            ---
+             
+            # Command Line Interface
+            
+            * Installation (Mac only):
+            
+            --
+            
+                * Install a [recent version of Python](https://www.python.org/downloads/macos/) (>3.1)
+            
+                * Install the AxiDraw Command Line Interface:
+            
+                    * open Terminal on your Mac
+                    
+                    * `python -m pip install https://cdn.evilmadscientist.com/dl/ad/public/AxiDraw_API.zip` and hit enter
+            
+            ---
+             
+            # Command Line Interface
+            
+            * Let’s construct a little script to use the plotter:
+            
+                * first we need to import the plotter tools like so:
+            
+                `from pyaxidraw import axidraw`
+                `ad = axidraw.AxiDraw()`
+            
+                * we can import svgs like so:
+            
+                `ad.plot_setup("path/to/testfile.svg")`
+            
+                * setup the pen up and down positions:
+
+                `ad.options.pen_pos_down = 45`
+                `ad.options.pen_pos_up = 20`
+                
+                * you can print layer by layer, using the layers mode:
+
+                `ad.options.mode = "layers"`
+
+                * and then plot the first layer in this case with acceleration set to 100
+                `ad.options.layer = 1`
+                `ad.options.accel = 100`
+                `ad.plot_run()`
+
+            ---
+            # Command Line Interface
+            
+            * The whole script looks as follows:
+            
+            `from pyaxidraw import axidraw`
+            `ad = axidraw.AxiDraw()`
+            
+            `ad.plot_setup("path/to/testfile.svg")`
+            `ad.options.pen_pos_down = 45`
+            `ad.options.pen_pos_up = 20`
+                
+
+            `ad.options.mode = "layers"`
+
+            
+            `ad.options.layer = 1`
+            `ad.options.accel = 100`
+            `ad.plot_run()`
+            
+            
+            ---
+            # Command Line Interface
+            
+            * More commented scripts can be found in [this sample directory](./sample-scripts)
+            
+        </textarea>
+        <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+        </script>
+        <script>
+            var slideshow = remark.create();
+        </script>
+    </body>
+</html>
